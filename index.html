@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OggePS3</title>
+    <title>Seçim Menüsü</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item {
+            margin: 10px 0;
+            cursor: pointer;
+            color: #007BFF;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h3>deneme</h3>
+
+<div id="menu">
+    <div class="menu-item" onclick="showContent('Seçenek 1')">Seçenek 1</div>
+    <div class="menu-item" onclick="showContent('Seçenek 2')">Seçenek 2</div>
+    <div class="menu-item" onclick="showContent('Seçenek 3')">Seçenek 3</div>
+    <div class="output" id="output"></div>
+</div>
+
+<script>
+    function showContent(option) {
+        const output = document.getElementById('output');
+        output.innerHTML = option + ' ile ilgili bilgiler burada görüntülenecek.';
+    }
+</script>
+
 </body>
 </html>
