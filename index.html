@@ -9,7 +9,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #1e1e1e;
+            color: #fff;
         }
         header {
             background-color: #007BFF;
@@ -21,21 +22,31 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background: white;
+            background: #2c2c2c;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .game {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
+            margin: 15px 0;
+            padding: 15px;
+            background: #333;
             border-radius: 5px;
+            position: relative;
         }
-        .upload-form {
-            margin-top: 20px;
+        .game h2 {
+            margin: 0;
+        }
+        .game p {
+            margin: 10px 0;
+        }
+        .download-link {
+            display: block;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .download-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -46,35 +57,22 @@
 </header>
 
 <main>
-    <h2>Oyun Listesi</h2>
-    <div class="game">Oyun 1: Oyun Açıklaması</div>
-    <div class="game">Oyun 2: Oyun Açıklaması</div>
-    <div class="game">Oyun 3: Oyun Açıklaması</div>
-
-    <div class="upload-form">
-        <h2>Yeni Oyun Yükle</h2>
-        <form id="game-upload">
-            <label for="game-name">Oyun Adı:</label><br>
-            <input type="text" id="game-name" name="game-name" required><br><br>
-            <label for="game-description">Oyun Açıklaması:</label><br>
-            <textarea id="game-description" name="game-description" required></textarea><br><br>
-            <button type="submit">Yükle</button>
-        </form>
+    <div class="game">
+        <h2>PS3 KIRMA REHBERİ!</h2>
+        <p>Ekim 29, 2024</p>
+        <p>LİNKLERİ GÖRÜNTÜLEMEK İÇİN DOSYA İÇERİĞİNE TIKLA!!</p>
+        <a href="indirme_linki_1" class="download-link">İndirme Linki</a>
     </div>
-</main>
 
-<script>
-    document.getElementById('game-upload').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const gameName = document.getElementById('game-name').value;
-        const gameDescription = document.getElementById('game-description').value;
-        const gameList = document.createElement('div');
-        gameList.classList.add('game');
-        gameList.innerHTML = `${gameName}: ${gameDescription}`;
-        document.querySelector('main').insertBefore(gameList, document.querySelector('.upload-form'));
-        this.reset();
-    });
-</script>
+    <div class="game">
+        <h2>Battlefield 4 PS3</h2>
+        <p>Ekim 31, 2024</p>
+        <p>LİNKLERİ GÖRÜNTÜLEMEK İÇİN DOSYA İÇERİĞİNE TIKLA!!</p>
+        <a href="indirme_linki_2" class="download-link">İndirme Linki</a>
+    </div>
+
+    <!-- Diğer oyunlar burada eklenebilir -->
+</main>
 
 </body>
 </html>
