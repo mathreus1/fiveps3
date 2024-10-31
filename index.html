@@ -3,50 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OggePS3</title>
+    <title>PS3 Oyunları Paylaşım</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f0f0f0;
         }
-        #menu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: white;
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
             padding: 20px;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .menu-item {
-            margin: 10px 0;
-            cursor: pointer;
-            color: #007BFF;
-        }
-        .output {
-            margin-top: 20px;
-            font-size: 18px;
+        h2 {
             color: #333;
+        }
+        .game {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .upload-form {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-<div id="menu">
-    <div class="menu-item" onclick="showContent('deneme')">Seçenek 1</div>
-    <div class="menu-item" onclick="showContent('deneme')">Seçenek 2</div>
-    <div class="menu-item" onclick="showContent('Seçenek 3')">Seçenek 3</div>
-    <div class="output" id="output"></div>
-</div>
+<header>
+    <h1>PS3 Oyunları Paylaşım Sitesi</h1>
+</header>
+
+<main>
+    <h2>Oyun Listesi</h2>
+    <div class="game">Oyun 1: Oyun Açıklaması</div>
+    <div class="game">Oyun 2: Oyun Açıklaması</div>
+    <div class="game">Oyun 3: Oyun Açıklaması</div>
+
+    <div class="upload-form">
+        <h2>Yeni Oyun Yükle</h2>
+        <form id="game-upload">
+            <label for="game-name">Oyun Adı:</label><br>
+            <input type="text" id="game-name" name="game-name" required><br><br>
+            <label for="game-description">Oyun Açıklaması:</label><br>
+            <textarea id="game-description" name="game-description" required></textarea><br><br>
+            <button type="submit">Yükle</button>
+        </form>
+    </div>
+</main>
 
 <script>
-    function showContent(option) {
-        const output = document.getElementById('output');
-        output.innerHTML = option + ' ';
-    }
+    document.getElementById('game-upload').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const gameName = document.getElementById('game-name').value;
+        const gameDescription = document.getElementById('game-description').value;
+        const gameList = document.createElement('div');
+        gameList.classList.add('game');
+        gameList.innerHTML = `${gameName}: ${gameDescription}`;
+        document.querySelector('main').insertBefore(gameList, document.querySelector('.upload-form'));
+        this.reset();
+    });
 </script>
 
 </body>
