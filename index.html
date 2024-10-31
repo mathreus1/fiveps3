@@ -36,8 +36,8 @@
 <body>
 
 <div id="menu">
-    <div class="menu-item" onclick="showContent('Seçenek 1')">Seçenek 1</div>
-    <div class="menu-item" onclick="showContent('Seçenek 2')">Seçenek 2</div>
+    <div class="menu-item" onclick="showContent('deneme')">Seçenek 1</div>
+    <div class="menu-item" onclick="showContent('deneme')">Seçenek 2</div>
     <div class="menu-item" onclick="showContent('Seçenek 3')">Seçenek 3</div>
     <div class="output" id="output"></div>
 </div>
@@ -45,7 +45,7 @@
 <script>
     function showContent(option) {
         const output = document.getElementById('output');
-        output.innerHTML = option + ' ile ilgili bilgiler burada görüntülenecek.';
+        output.innerHTML = option + ' ';
     }
 </script>
 
